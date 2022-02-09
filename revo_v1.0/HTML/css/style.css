@@ -72,6 +72,8 @@
 @import url('settings.css');
 @import url('layers.css');
 @import url('navigation.css');
+@import url('https://use.fontawesome.com/releases/v5.7.1/css/all.css');
+
 
 
 html{
@@ -1031,6 +1033,7 @@ header .spacer + *{
   line-height: 50px;
   border-radius: 50%;
   background-color: #1374a9;
+  transition: all 0.3s ease-out;
 }
 
 .scroll-bottom .fa{
@@ -2301,13 +2304,23 @@ img.mfp-img{
   background-color: #141414;
 }
 
+.footer-bottom .container{
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
 .copy{
   margin-bottom: 15px;
+  padding-top: 20px;
+  text-align: center;
+  line-height: 3;
 }
 
 .social{
   margin-top: -7px;
   margin-left: -30px;
+  padding-bottom: 20px;
 }
 
 .social a{
@@ -2333,7 +2346,7 @@ img.mfp-img{
   border-radius: 50%;
 }
 
-.social-round a .fa{
+.social-round a .fab{
   color:#141414;
 }
 
@@ -2341,7 +2354,7 @@ img.mfp-img{
   background-color:  #1374a9;
 }
 
-.social-round a:hover .fa{
+.social-round a:hover .fab{
   color:  #fff;
 }
 
