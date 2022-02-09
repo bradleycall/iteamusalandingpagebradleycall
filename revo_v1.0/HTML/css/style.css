@@ -1034,6 +1034,7 @@ header .spacer + *{
   border-radius: 50%;
   background-color: #1374a9;
   transition: all 0.3s ease-out;
+  padding-bottom: 30px;
 }
 
 .scroll-bottom .fa{
