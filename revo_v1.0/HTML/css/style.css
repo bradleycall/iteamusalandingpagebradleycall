@@ -915,8 +915,18 @@ header .spacer + *{
   padding: 12px 20px 10px;
 }
 
+.navbar-nav li.contact-button {
+  border: 2px solid #1374a9;
+  padding: 10px 15px;
+  margin-top: -12px;
+  background-color: #1374a9;
+  border-radius: 30px;
+}
 
-
+.navbar-nav li.contact-button:hover {
+  background-color: #fff;
+  color: #1374a9;
+}
 /* 2.3 Affix */
 
 
