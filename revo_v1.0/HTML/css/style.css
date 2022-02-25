@@ -922,10 +922,6 @@ header .spacer + *{
   border-radius: 30px;
 }
 
-.navbar-nav li.contact-button:hover, .navbar-nav li.contact-button.active {
-  background-color: #fff;
-  color: #1374a9;
-}
 /* 2.3 Affix */
 
 

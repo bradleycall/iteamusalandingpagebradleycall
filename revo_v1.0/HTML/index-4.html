@@ -65,7 +65,7 @@
             <li>
               <a href="#blog" class="js-target-scroll">Blog</a>
             </li>
-            <li class="contact-button">
+            <li>
               <a href="#contact" class="js-target-scroll">Contact</a>
             </li>
           </ul>
@@ -501,8 +501,15 @@
             </div>
             <div class="column col-sm-6 col-md-3">
               <div class="counter">
-                <div class="counter-value" data-value="84">84</div>
-                <div class="counter-details">Hosted Sites</div>
+                <div class="counter-value" id="date" data-value="0">0</div>
+                <div class="counter-details">Years Experience</div>
+                
+                <script>
+                  let startDate = 2019;
+                  const counterDate = new Date();
+                  document.getElementById("date").setAttribute("data-value",(counterDate.getFullYear() - startDate));
+                  document.getElementById("date").innerHTML = (counterDate.getFullYear()) - startDate;
+                </script>
               </div>
             </div>
           </div>
@@ -621,7 +628,7 @@
       <section id="contact" class="contact-2 section">
         <div class="container">
           <header class="text-center col-md-8 col-md-offset-2">
-            <h2 class="section-title">contact Us</h2>
+            <h2 class="section-title">Contact Me</h2>
             <div class="spacer spacer-primary">
               <div class="line">
                 <div class="dot"></div>
@@ -658,6 +665,7 @@
               <a href="#"><i class="fab fa-pinterest"></i></a>
               <a href="#"><i class="fab fa-youtube"></i></a>
               <a href="#"><i class="fab fa-google-plus-g"></i></a>
+              <a href="https://www.linkedin.com/in/bradley-call" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             </div>
           </div>
         </div>
@@ -679,6 +687,7 @@
               <a href="#" class="fab fa-pinterest"></a>
               <a href="#" class="fab fa-youtube"></a>
               <a href="#" class="fab fa-google-plus-g"></a>
+              <a href="https://www.linkedin.com/in/bradley-call" target="_blank" class="fab fa-linkedin-in"></a>
             </div>
           </div>
         </div>
