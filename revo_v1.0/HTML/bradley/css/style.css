@@ -538,7 +538,7 @@ label.mc-label .fa{
   background:#1374a9;
 }
 
-.icon-circle-2 .fa{
+.icon-circle-2 .fa, .icon-circle-2 .fa-html5 {
   font-size:30px;
   color:#fff;
   vertical-align: middle;
