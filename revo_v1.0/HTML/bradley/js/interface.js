@@ -369,7 +369,7 @@
 			    submitHandler: function(form){
 		        	$.ajax({
 			            type: "POST",
-			            url: base_url + "/php/mail.php",
+			            url:"mail.php",
 			            data: $(form).serialize(),
 			            success: function() {
 			                $('.modal').modal('hide');
