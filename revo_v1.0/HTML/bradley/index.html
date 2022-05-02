@@ -17,6 +17,7 @@
   <!-- Styles -->
 
   <link href="css/style.css" rel="stylesheet" media="screen">
+  <link href="css/popups.css" rel="stylesheet" media="screen">
 
 
 </head>
@@ -42,7 +43,7 @@
             <span class="icon-bar"></span>
           </button>
           <a href="#home" class="brand js-target-scroll">
-            <span><img src="img/MainLogo v2.png" width="250px" alt="DevCo Logo" style="margin-top: -20px;"></span>
+            <span><img src="img/mainLogo.png" width="250px" alt="DevCo Logo" style="margin-top: -20px;"></span>
           </a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
@@ -217,7 +218,76 @@
           <div class="container">
             <div class="row row-columns">
               <div class="col-md-6 col-lg-4 col-lg-push-4 wow fadeInUp">
-                <img alt="" class="center-block img-responsive" src="img/profilePhoto.jpg">
+                <div class="popup">
+                  <span class="popuptext" id="popup-box">A Simple Popup!</span>
+                </div>
+                <img alt="" class="center-block img-responsive" id="profile-photo" src="img/profilePhoto.jpg" onclick="talk()">
+                <script>
+                  var pokes = 0;
+                  function talk() {
+                    pokes++;
+                    console.log(pokes);
+                    var popup = document.getElementById("popup-box");
+                    var ranQuote = Math.floor(Math.random() * 10);
+                    let quoteText;
+
+                    popup.classList.remove("show");
+                    console.log(ranQuote);
+
+                    if (pokes == 10) {
+                      quoteText = "That's it, I'm done!";
+                    } else if (pokes > 10) {
+                      quoteText = "Bradley left the room angrily.";
+                      document.getElementById("profile-photo").classList.add("leave");
+                    } else {
+                      switch (ranQuote) {
+                        case 1:
+                          quoteText = "Hey!";
+                          break;
+
+                        case 2:
+                          quoteText = "Stop it!";
+                          break;
+
+                        case 3:
+                          quoteText = "Why?";
+                          break;
+
+                        case 4:
+                          quoteText = "That tickles!";
+                          break;
+
+                        case 5:
+                          quoteText = "Ow!";
+                          break;
+
+                        case 6:
+                          quoteText = "Quit poking me!";
+                          break;
+
+                        case 7:
+                          quoteText = "Please don't touch me.";
+                          break;
+
+                        case 8:
+                          quoteText = "Please stop!";
+                          break;
+
+                        case 9:
+                          quoteText = ">:(";
+                          break;
+
+                        default:
+                          quoteText = "Huh?";
+                          break;
+                      }
+                    }
+                    console.log(quoteText);
+
+                    document.getElementById('popup-box').innerHTML = quoteText;
+                    popup.classList.add("show");
+                  }
+                </script>
               </div>
               <div class="col-md-6 col-lg-4 col-lg-pull-4">
                 <div class="feature-box-wrap">
@@ -292,7 +362,8 @@
             <li title="Filter Category: All" class="active"><a href="#" data-filter="*">All</a></li>
             <li title="Filter Category: Visual Design"><a href="#" data-filter=".visual">Visual Design</a></li>
             <li title="Filter Category: Web Design"><a href="#" data-filter=".webdesign">Web Design</a></li>
-            <li title="Filter Category: Web Development"><a href="#" data-filter=".webdevelopment">Web Development</a></li>
+            <li title="Filter Category: Web Development"><a href="#" data-filter=".webdevelopment">Web Development</a>
+            </li>
             <li title="Filter Category: Graphic Design"><a href="#" data-filter=".graphic">Graphic</a></li>
           </ul>
         </div>
@@ -301,7 +372,8 @@
             <div class="isotope-item visual">
               <a href="img/portfolio/TRIBUTE_bradleyc_1.jpg" title="Benjamin Burnley Tribute Collage (click to expand)">
                 <figure class="showcase-item">
-                  <div class="showcase-item-thumbnail"><img alt="" src="img/portfolio/TRIBUTE_bradleyc_1_preview.jpg"></div>
+                  <div class="showcase-item-thumbnail"><img alt="" src="img/portfolio/TRIBUTE_bradleyc_1_preview.jpg">
+                  </div>
                   <figcaption class="showcase-item-hover">
                     <div class="showcase-item-info">
                       <div class="showcase-item-category">Visual Design</div>
@@ -312,7 +384,8 @@
               </a>
             </div>
             <div class="isotope-item visual">
-              <a href="img/portfolio/LIGHT_bradleyc.jpg" title="'Elephant In The City' Lighting Effects (click to expand)">
+              <a href="img/portfolio/LIGHT_bradleyc.jpg"
+                title="'Elephant In The City' Lighting Effects (click to expand)">
                 <figure class="showcase-item">
                   <div class="showcase-item-thumbnail"><img alt="" src="img/portfolio/LIGHT_bradleyc_preview.jpg"></div>
                   <figcaption class="showcase-item-hover item-hover-bottom">
@@ -338,7 +411,8 @@
               </a>
             </div>
             <div class="isotope-item webdesign">
-              <a href="img/portfolio/utahDiaperBank.jpg" title="iTeamUSA UX/UI Competition - Utah Diaper Bank (click to expand)">
+              <a href="img/portfolio/utahDiaperBank.jpg"
+                title="iTeamUSA UX/UI Competition - Utah Diaper Bank (click to expand)">
                 <figure class="showcase-item">
                   <div class="showcase-item-thumbnail"><img alt="" src="img/portfolio/utahDiaperBank_preview.jpg"></div>
                   <figcaption class="showcase-item-hover">
@@ -351,7 +425,8 @@
               </a>
             </div>
             <div class="isotope-item webdevelopment">
-              <a href="img/portfolio/rivertonCounseling.jpg" title="rivertoncounseling.org Website Internship (click to expand)">
+              <a href="img/portfolio/rivertonCounseling.jpg"
+                title="rivertoncounseling.org Website Internship (click to expand)">
                 <figure class="showcase-item">
                   <div class="showcase-item-thumbnail"><img alt="" src="img/portfolio/rivertonHighLogo.png"></div>
                   <figcaption class="showcase-item-hover">
@@ -366,7 +441,8 @@
             <div class="isotope-item webdevelopment">
               <a href="img/portfolio/portfolioWebsite.jpg" title="Profile Landing Page (click to expand)">
                 <figure class="showcase-item">
-                  <div class="showcase-item-thumbnail"><img alt="" src="img/portfolio/portfolioWebsite_preview.jpg"></div>
+                  <div class="showcase-item-thumbnail"><img alt="" src="img/portfolio/portfolioWebsite_preview.jpg">
+                  </div>
                   <figcaption class="showcase-item-hover">
                     <div class="showcase-item-info">
                       <div class="showcase-item-category">Web Development</div>
@@ -390,9 +466,11 @@
               </a>
             </div>
             <div class="isotope-item graphic">
-              <a href="img/portfolio/Print_masterDragon_TRIBUTE.jpg" title="Tribute to Master Dragon Kim (click to expand)">
+              <a href="img/portfolio/Print_masterDragon_TRIBUTE.jpg"
+                title="Tribute to Master Dragon Kim (click to expand)">
                 <figure class="showcase-item">
-                  <div class="showcase-item-thumbnail"><img alt="" src="img/portfolio/Print_masterDragon_TRIBUTE_preview.jpg"></div>
+                  <div class="showcase-item-thumbnail"><img alt=""
+                      src="img/portfolio/Print_masterDragon_TRIBUTE_preview.jpg"></div>
                   <figcaption class="showcase-item-hover">
                     <div class="showcase-item-info">
                       <div class="showcase-item-category">Graphic Design</div>
@@ -428,7 +506,7 @@
           <div class="clearfix">
             <div class="col-md-6 col-lg-6 wow fadeInLeft">
               <div class="img-frame md-pull-right"><img alt="" class="center-block img-responsive"
-                  src="img/MainLogo v2.png"></div>
+                  src="img/mainLogo.png"></div>
             </div>
             <div class="col-about-margin col-md-6 col-lg-4">
               <h2 class="about-title">The Home of Creative Designs</h2>
@@ -442,7 +520,8 @@
                     </div>
                     <div class="media-right">
                       <h4 class="icon-title ">Website Development / Maintenance</h4>
-                      <p>I can create, update and maintain beautiful websites from top to bottom, through back-end code or WordPress design.</p>
+                      <p>I can create, update and maintain beautiful websites from top to bottom, through back-end code
+                        or WordPress design.</p>
                     </div>
                   </div>
                   <div class="column col-sm-6 col-md-12">
@@ -453,7 +532,8 @@
                     </div>
                     <div class="media-right">
                       <h4 class="icon-title">Content creation / editing</h4>
-                      <p>I can create and edit content- including photos, videos, graphics, etc.- specific to your business, for use on your website.</p>
+                      <p>I can create and edit content- including photos, videos, graphics, etc.- specific to your
+                        business, for use on your website.</p>
                     </div>
                   </div>
                   <div class="column col-sm-6 col-md-12">
@@ -464,7 +544,8 @@
                     </div>
                     <div class="media-right">
                       <h4 class="icon-title">Logo Design</h4>
-                      <p>Your logo should represent your company, and be easily recognizeable. I can work with you to create the ideal logo for your business.</p>
+                      <p>Your logo should represent your company, and be easily recognizeable. I can work with you to
+                        create the ideal logo for your business.</p>
                     </div>
                   </div>
                 </div>
@@ -501,12 +582,12 @@
               <div class="counter">
                 <div class="counter-value" id="date" data-value="0">0</div>
                 <div class="counter-details">Years Experience</div>
-                
+
                 <!-- Calculates Years Experience -->
                 <script>
                   let startDate = 2019;
                   const counterDate = new Date();
-                  document.getElementById("date").setAttribute("data-value",(counterDate.getFullYear() - startDate));
+                  document.getElementById("date").setAttribute("data-value", (counterDate.getFullYear() - startDate));
                   document.getElementById("date").innerHTML = (counterDate.getFullYear()) - startDate;
                 </script>
               </div>
@@ -536,38 +617,50 @@
           <div class="container">
             <div class="partners-carousel">
               <div class="partner">
-                <a href="https://www.credly.com/badges/4b55f3f3-8e20-4fe7-afdb-bc8c4bca7058/public_url" target="_blank" title="Certified Professional in Visual Design Using Adobe Photoshop">
-                  <img alt="Adobe Certified Professional In Visual Design Using Adobe Photoshop" src="img/certifications/adobe-certified-professional-photoshop.png">
+                <a href="https://www.credly.com/badges/4b55f3f3-8e20-4fe7-afdb-bc8c4bca7058/public_url" target="_blank"
+                  title="Certified Professional in Visual Design Using Adobe Photoshop">
+                  <img alt="Adobe Certified Professional In Visual Design Using Adobe Photoshop"
+                    src="img/certifications/adobe-certified-professional-photoshop.png">
                 </a>
               </div>
 
               <div class="partner">
-                <a href="https://www.credly.com/badges/c1dd9e2a-233a-4c30-a44a-d6fa93f6996b/public_url" target="_blank" title="Certified Professional in Graphic Design Using Adobe Illustrator">
-                  <img alt="Adobe Certified Professional In Graphic Design Using Adobe Illustrator" src="img/certifications/adobe-certified-professional-illustrator.png">
+                <a href="https://www.credly.com/badges/c1dd9e2a-233a-4c30-a44a-d6fa93f6996b/public_url" target="_blank"
+                  title="Certified Professional in Graphic Design Using Adobe Illustrator">
+                  <img alt="Adobe Certified Professional In Graphic Design Using Adobe Illustrator"
+                    src="img/certifications/adobe-certified-professional-illustrator.png">
                 </a>
               </div>
 
               <div class="partner">
-                <a href="https://www.credly.com/badges/6f4a02fb-b5d9-4eb2-af2e-6e5bf136b41c/public_url" target="_blank" title="Adobe Certified Professional in Visual Design">
-                  <img alt="Adobe Certified Professional In Visual Design" src="img/certifications/adobe-certified-professional-in-visual-design.png">
+                <a href="https://www.credly.com/badges/6f4a02fb-b5d9-4eb2-af2e-6e5bf136b41c/public_url" target="_blank"
+                  title="Adobe Certified Professional in Visual Design">
+                  <img alt="Adobe Certified Professional In Visual Design"
+                    src="img/certifications/adobe-certified-professional-in-visual-design.png">
                 </a>
               </div>
 
               <div class="partner">
-                <a href="https://www.credly.com/badges/b747ddae-6ec3-4def-b912-f282a2cc2a20/public_url" target="_blank" title="Microsoft Certified Programmer Using HTML And CSS">
-                  <img alt="Microsoft Certified Programmer Using HTML And CSS" src="img/certifications/mta-programming-html-css-certified-2022.png">
+                <a href="https://www.credly.com/badges/b747ddae-6ec3-4def-b912-f282a2cc2a20/public_url" target="_blank"
+                  title="Microsoft Certified Programmer Using HTML And CSS">
+                  <img alt="Microsoft Certified Programmer Using HTML And CSS"
+                    src="img/certifications/mta-programming-html-css-certified-2022.png">
                 </a>
               </div>
 
               <div class="partner">
-                <a href="https://www.credly.com/badges/bccb0f0c-7791-439c-9e9f-190523b15388/public_url" target="_blank" title="MTA Certified in HTML5 Application Development">
-                  <img alt="MTA Certified in HTML5 Application Development" src="img/certifications/mta-html5-application-development-certified-2022.png">
+                <a href="https://www.credly.com/badges/bccb0f0c-7791-439c-9e9f-190523b15388/public_url" target="_blank"
+                  title="MTA Certified in HTML5 Application Development">
+                  <img alt="MTA Certified in HTML5 Application Development"
+                    src="img/certifications/mta-html5-application-development-certified-2022.png">
                 </a>
               </div>
 
               <div class="partner">
-                <a href="https://www.credly.com/badges/d513b99b-62fb-4aee-9a92-5885a425a58a/public_url" target="_blank" title="Microsoft Certified Programmer Using JavaScript">
-                  <img alt="Microsoft Certified Programmer Using JavaScript" src="img/certifications/mta-programming-javascript-certified-2022.png">
+                <a href="https://www.credly.com/badges/d513b99b-62fb-4aee-9a92-5885a425a58a/public_url" target="_blank"
+                  title="Microsoft Certified Programmer Using JavaScript">
+                  <img alt="Microsoft Certified Programmer Using JavaScript"
+                    src="img/certifications/mta-programming-javascript-certified-2022.png">
                 </a>
               </div>
             </div>
@@ -599,8 +692,13 @@
           <div class="row row-columns">
             <div class="column col-md-6">
               <h2 class="title-lg">iTeamUSA 2022 Results</h2>
-              <p>Congratulations to everyone who participated in the 2022 iTeamUSA Regionals Competition! I took 2nd in UX/UI design (shoutout to my partners, Jackson Johns and Ethan Morin!) and 2nd in landing page template design!<br>There were some amazing submissions this year, you can see the winners in each category through the link below. </p>
-              <a href="https://www.iteamusa.org/2022-academic-winners" target="_blank" class="btn wow swing" alt="link to iteamusa.org" title="Click to see this year's winners (opens in a seperate tab)">Read more</a>
+              <p>Congratulations to everyone who participated in the 2022 iTeamUSA Regionals Competition! I took 2nd in
+                UX/UI design (shoutout to my partners, Jackson Johns and Ethan Morin!) and 2nd in landing page template
+                design!<br>There were some amazing submissions this year, you can see the winners in each category
+                through the link below. </p>
+              <a href="https://www.iteamusa.org/2022-academic-winners" target="_blank" class="btn wow swing"
+                alt="link to iteamusa.org" title="Click to see this year's winners (opens in a seperate tab)">Read
+                more</a>
             </div>
             <div class="column col-md-6 wow fadeInRight">
               <img alt="" class="img-responsive" src="img/portfolio/profile-2.jpg">
@@ -635,7 +733,7 @@
                       placeholder="Email address *" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></div>
                   <div class="col-form col-md-4"><input type="text" class="form-control" id="inputEmail" name="phone"
                       placeholder="Phone">
-                    </div>
+                  </div>
                 </div>
               </div>
               <div class="form-group">
@@ -651,7 +749,8 @@
               <a href="#"><i class="fab fa-twitter"></i></a>
               <a href="#"><i class="fab fa-pinterest"></i></a>
               <a href="#"><i class="fab fa-youtube"></i></a>
-              <a href="https://www.linkedin.com/in/bradley-call" target="_blank" alt="LinkedIn Profile Link" title="Follow Me On LinkedIn!"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.linkedin.com/in/bradley-call" target="_blank" alt="LinkedIn Profile Link"
+                title="Follow Me On LinkedIn!"><i class="fab fa-linkedin-in"></i></a>
             </div>
           </div>
         </div>
@@ -663,14 +762,16 @@
         <div class="footer-bottom">
           <div class="container">
             <div class="copy">
-              &copy; 2022 DevCo&trade;. All rights reserved.<br>DevCo&trade;, the DevCo logo, and all related content is licenced under some random copyright rule. Respect the copyright. thx :)
+              &copy; 2022 DevCo&trade;. All rights reserved.<br>DevCo&trade;, the DevCo logo, and all related content is
+              licenced under some random copyright rule. Respect the copyright. thx :)
             </div>
             <div class="social">
               <a href="#" class="fab fa-facebook-f"></a>
               <a href="#" class="fab fa-twitter"></a>
               <a href="#" class="fab fa-pinterest"></a>
               <a href="#" class="fab fa-youtube"></a>
-              <a href="https://www.linkedin.com/in/bradley-call" target="_blank" class="fab fa-linkedin-in" alt="LinkedIn Profile Link" title="Follow Me On LinkedIn!"></a>
+              <a href="https://www.linkedin.com/in/bradley-call" target="_blank" class="fab fa-linkedin-in"
+                alt="LinkedIn Profile Link" title="Follow Me On LinkedIn!"></a>
             </div>
           </div>
         </div>
