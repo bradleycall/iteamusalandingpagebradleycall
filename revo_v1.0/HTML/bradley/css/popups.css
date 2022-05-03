@@ -1,14 +1,12 @@
 /* Popup container */
 .popup {
     position: relative;
-    /* cursor: pointer; */
     display: flex;
     margin-bottom: 10px;
-
   }
   
   /* popup box */
-  .popup .popuptext {
+  .popup .popup-text {
     visibility: hidden;
     width: 160px;
     background-color: #555;
@@ -24,7 +22,7 @@
   }
   
   /* Popup arrow */
-  .popup .popuptext::after {
+  .popup .popup-text::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -35,15 +33,15 @@
     border-color: #555 transparent transparent transparent;
   }
   
-  /* .show - Affected by inline js */
+  /* visibility effects - Affected by inline js */
   .popup .show {
     visibility: visible;
     animation: fadeIn 1s;
   }
 
    #profile-photo.leave {
-    visibility: hidden;
-    animation: fadeOut 1s;
+    transition: 1s;
+    opacity: 0;
   }
   
   /* Add animation (fade in the popup) */
