@@ -840,7 +840,7 @@ header .spacer + *{
 
 
 .navbar-nav{
-  margin-top:4px;
+  /* margin-top:4px; */
   font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;

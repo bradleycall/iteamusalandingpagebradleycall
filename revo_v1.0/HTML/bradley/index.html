@@ -218,28 +218,31 @@
           <div class="container">
             <div class="row row-columns">
               <div class="col-md-6 col-lg-4 col-lg-push-4 wow fadeInUp">
-                <div class="popup">
-                  <span class="popup-text" id="popup-box">A Simple Popup!</span>
+                <div class="popup-wrapper">
+                  <span class="popup-text" id="popup-box">Not an Easter Egg...</span>
                 </div>
-                <img alt="" class="center-block img-responsive" id="profile-photo" src="img/profilePhoto.jpg" onclick="talk()">
+                <img alt="" class="center-block img-responsive" id="profile-photo" src="img/profilePhoto.jpg"
+                  onclick="poke()">
+
+
                 <script>
-                  var pokes = 0;
-                  function talk() {
-                    pokes++;
-                    console.log(pokes);
-                    var popup = document.getElementById("popup-box");
-                    var ranQuote = Math.floor(Math.random() * 10);
-                    let quoteText;
+                  var numOfPokes = 0;
+                  var popupSelector, ranQuote;
+                  let quoteText;
+                  function poke() {
+                    numOfPokes++;
+                    popupSelector = document.getElementById("popup-box");
+                    ranQuote = Math.floor(Math.random() * 10);
+                    popupSelector.classList.remove("show");
 
-                    popup.classList.remove("show");
-                    console.log(ranQuote);
-
-                    if (pokes == 10) {
+                    if (numOfPokes == 10) {
                       quoteText = "That's it, I'm done!";
-                    } else if (pokes > 10) {
+                    }
+                    else if (numOfPokes > 10) {
                       quoteText = "Bradley left the room angrily.";
                       document.getElementById("profile-photo").classList.add("leave");
-                    } else {
+                    }
+                    else {
                       switch (ranQuote) {
                         case 1:
                           quoteText = "Hey!";
@@ -254,7 +257,7 @@
                           break;
 
                         case 4:
-                          quoteText = "That tickles!";
+                          quoteText = "Who's there?";
                           break;
 
                         case 5:
@@ -282,10 +285,14 @@
                           break;
                       }
                     }
-                    console.log(quoteText);
+
+
+                    // console.log(numOfPokes);
+                    // console.log(ranQuote);
+                    // console.log(quoteText);
 
                     document.getElementById('popup-box').innerHTML = quoteText;
-                    popup.classList.add("show");
+                    popupSelector.classList.add("open");
                   }
                 </script>
               </div>

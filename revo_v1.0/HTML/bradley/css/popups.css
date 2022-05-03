@@ -1,12 +1,15 @@
+/* Modified Code, inspired by https://www.w3schools.com/ */
+
+
 /* Popup container */
-.popup {
+.popup-wrapper {
     position: relative;
     display: flex;
     margin-bottom: 10px;
   }
   
   /* popup box */
-  .popup .popup-text {
+  .popup-wrapper .popup-text {
     visibility: hidden;
     width: 160px;
     background-color: #555;
@@ -22,7 +25,7 @@
   }
   
   /* Popup arrow */
-  .popup .popup-text::after {
+  .popup-wrapper .popup-text::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -34,7 +37,7 @@
   }
   
   /* visibility effects - Affected by inline js */
-  .popup .show {
+  .popup-wrapper .open {
     visibility: visible;
     animation: fadeIn 1s;
   }
