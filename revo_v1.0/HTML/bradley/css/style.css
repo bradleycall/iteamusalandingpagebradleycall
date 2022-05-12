@@ -925,7 +925,9 @@ header .spacer+* {
 
 /* 2.3 Affix */
 
-
+.navbar.affix-top {
+  background-color: rgba(14, 14, 14, 0.80);
+}
 
 .navbar.affix {
   position: fixed;
